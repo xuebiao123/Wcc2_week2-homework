@@ -1,33 +1,29 @@
-// create our creature class    创建生物的类
-
-let button;
-
-class Creature {   //创建生物的类
+// create our creature class
+class Creature {
   // this constructor is called when we define new Creature(...)
   constructor(_x, _y) {
-    this.location = new createVector(_x, _y);  // Location of shape   新的生物的位置
-    this.velocity = new createVector(random(-2,2),random(-2,2));  // Velocity of shape 随机出它的速度
-    this.friction = new createVector(0, 0);  
-    this.desired = new createVector(0, 0);    //预期的
-    this.diameter = random(10,40);           // 圆的直径
-    this.speedLimit = random(1,this.diameter/10);   //速度的限制
+    this.location = new createVector(_x, _y);  // Location of shape
+    this.velocity = new createVector(random(-2,2),random(-2,2));  // Velocity of shape
+    this.friction = new createVector(0, 0); 
+    this.desired = new createVector(0, 0); 
+    this.diameter = random(10,40);
+    this.speedLimit = random(1,this.diameter/10);
   }
 
-  moveToFood(x, y){         //移动到食物的所在地
+  moveToFood(x, y){
 
-    this.desired.x = x; 
+    this.desired.x = x;
     this.desired.y = y;
     let direction = p5.Vector.sub(this.desired, this.location); // gets vector between these two points
-    // 得到两个点之间的直径
 
-    // mag / magnitude is the length of the distance between the two points //两点之间的距离长度
+    // mag / magnitude is the length of the distance between the two points
     if (direction.mag() < this.diameter/2){
       return true; //stops moving as it returns before adding direction to velocity below
     } 
   
-    //only move if they are close to the target x & y locations 只有当他们接近目标X和Y的位置时才会移动
+    //only move if they are close to the target x & y locations
     if(direction.mag() < 200){
-      direction.normalize(); //normalize gives us the unit vector of length 1 (i.e. just the direction ) 归一化给我们的是长度为1的单位向量（即只是方向）
+      direction.normalize(); //normalize gives us the unit vector of length 1 (i.e. just the direction )
       this.velocity.add(direction);
     }
 
@@ -108,22 +104,6 @@ function draw() {
   
   }
 
-  // addGUI();
 
 }
 
-function addGUI()
-{
-
-  //add a button
-  button = createButton("FEED");
-
-  button.addClass("button");
-
-  //Add the play button to the parent gui HTML element
-  button.parent("gui-container");
-  
-  //Adding a mouse pressed event listener to the button 
-  //button.mousePressed(handleButtonPress); 
-
-}
