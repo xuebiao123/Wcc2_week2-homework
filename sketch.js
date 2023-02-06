@@ -124,10 +124,10 @@ function draw() {
   
     updateFood();
   
-    if(button.hasClass("inactive") && food.length == 0 ){
-    
-      //circle(this.location.x -100,this.location.y -100,this.diameter);
-    }
+      if(button.hasClass("inactive") && food.length == 0){
+    button.html("FEED");
+    button.removeClass("inactive");
+  }
 }
 function updateFood(){
   for(let i = food.length-1; i >= 0 ; i--){
@@ -150,29 +150,31 @@ function addGUI()
 
   button.mousePressed(handleButtonPress);
 
+  
+
 }
 
 function addGUI_B()
 {
-  button = createButton("Play");
+  buttonB = createButton("Play");
 
-  button.addClass("buttonB");
+  buttonB.addClass("buttonB");
 
-  button.parent("gui-container");
+  buttonB.parent("gui-container");
 
-  button.mousePressed(handleButtonPress_B);
+  buttonB.mousePressed(handleButtonPress_B);
 
 }
 
 function addGUI_C()
 {
-  button = createButton("Clean");
+  buttonC = createButton("Clean");
 
-  button.addClass("buttonC");
+  buttonC.addClass("buttonC");
 
-  button.parent("gui-container");
+  buttonC.parent("gui-container");
 
-  button.mousePressed(handleButtonPress_C);
+  buttonC.mousePressed(handleButtonPress_C);
 
 }
 
@@ -194,7 +196,8 @@ function handleButtonPress()
   
     // 食物放出，但是没有吃到
     if(food.length > 0){
-      
+      button.html("FEEDING");
+      button.addClass("inactive");
     }
   
 }
