@@ -13,10 +13,11 @@ class Creature {
   }
 
   moveToFood(x, y){
-
-    // If it's fed 如果她喂饱了
+     
+    // If it's fed --如果她喂饱了
     if(this.full>0){
       return false;
+
     }
 
     this.desired.x = x;
