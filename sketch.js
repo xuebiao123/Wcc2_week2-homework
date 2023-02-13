@@ -14,7 +14,7 @@ class Creature {
 
   moveToFood(x, y){
 
-    // 如果她喂饱了
+    // If it's fed 如果她喂饱了
     if(this.full>0){
       return false;
     }
@@ -79,7 +79,7 @@ class Creature {
     // Display circle at location vector
     noStroke();
   
-    fill(map(this.full,0,1000,0,255),0,155);
+    fill(map(this.full,0,1000,176,255),183,134);
     circle(this.location.x,this.location.y,this.diameter)
   }
 }
@@ -107,7 +107,7 @@ function setup() {
 }
 
 function draw() {
-  background(44,204,113);
+  background(225,226,211);
   
     // loop through all the creatrure and animate them each frame by accessing their update function
    
@@ -149,8 +149,6 @@ function addGUI()
   button.parent("gui-container");
 
   button.mousePressed(handleButtonPress);
-
-  
 
 }
 
@@ -194,7 +192,7 @@ function handleButtonPress()
         });
     }
   
-    // 食物放出，但是没有吃到
+    // Food released, but not eaten 食物放出，但是没有吃到
     if(food.length > 0){
       button.html("FEEDING");
       button.addClass("inactive");

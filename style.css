@@ -41,8 +41,8 @@ main{
 
 .button{
  
-  background-color: #371bd3;
-  border: solid 1px #371bd3;
+  background-color: #a3bfa7;
+  border: solid 1px #a3bfa7;
   border-radius: 10px;
   color: white;
   padding: 15px 20px;
@@ -58,8 +58,8 @@ main{
 
 .buttonB{
  
-  background-color: #6148e9;
-  border: solid 1px #6148e9;
+  background-color: #748160;
+  border: solid 1px #748160;
   border-radius: 10px;
   color: white;
   padding: 15px 20px;
@@ -75,8 +75,8 @@ main{
 
 .buttonC{
  
-  background-color: #490098;
-  border: solid 1px #490098;
+  background-color: #afb096;
+  border: solid 1px #afb096;
   border-radius: 10px;
   color: white;
   padding: 15px 20px;
